@@ -21,7 +21,7 @@ app.get('/', function (req, res) {
 
 app.get('/api/whoami', function (req, res) {
   app.enable('trust proxy');
-  res.json({ 'ipaddress': req.ip, 'language': req.get('Accept-Language',), 'software': req.software });
+  res.json({ 'ipaddress': req.ip, 'language': req.get('Accept-Language'), 'software': req.get('User-Agent') });
 });
 
 // listen for requests :)
